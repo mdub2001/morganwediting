@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgan White - Video Editor & Drone Pilot</title>
+    <title>YouTube Video Slideshow</title>
+    
+    <style>
+      body {
+        
+        font-family: Georgia;
+        margin: 0;
+        padding: 0;
+        background-color: lightgrey;
+        color: #333;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #about p {
+        color: #666;
+        font-family: Georgia;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      /*about me */
+      .contact-link {
+        color: #007BFF;
+      }
+
+      .portfolio {
+        margin-top: 40px;
+        position: relative;
+      }
+
+      .portfolio-item {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: lightgrey;
+
+
+      }
+
+
+
+      .portfolio-item h2 {
+        margin-top: -50px;
+        color: #333;
+      }
+
+      .portfolio-item p {
+        margin-bottom: 0;
+        color: #777;
+      }
+
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+        text-align: center;
+        /* Center navigation links */
+      }
+
+      .navbar a {
+        display: inline-block;
+        /* Display as blocks to create space between links */
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: Georgia;
+      }
+
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Navigation Bar Styles */
+      .navbar {
+        background-color: #C0350F;
+        /* red */
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .navbar a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .navbar a:hover {
+        background-color: black;
+        /* Brighter orange on hover */
+        color: white;
+      }
+
+      .separation-border {
+        border-top: 1px solid black;
+        margin-top: 4px;
+        padding-top: 40px;
+      }
+
+    </style>
+<style>
+    /* Center the video container */
+    
+   
+   /* Center the video container */
+    #video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -50px;
+        max-width: 100%; /* Ensure videos don't exceed container width */
+        overflow: hidden; /* Hide overflow if videos exceed container width */
+    }
+
+    /* Style for YouTube videos */
+     .separation-border2 {
+         border-top: 1px solid black;
+        margin-top: 40px;
+        padding-top: 40px;
+      }
+    .youtube-video {
+       
+      
+        width: 40%; /* Adjust the width as needed */
+        height: 600px;
+        max-height: calc(100vh - 100px);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+     .youtube-video:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+   
+     
+
+</style>
+
+<style>
+#contact {
+    margin-top: -20px;
+    margin-bottom:40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contact h2 {
+    color: #C0350F;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#contact a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contact a:hover {
+    color: #0056b3;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  z-index: 999; /* Make sure the footer is above other content */
+}
+
+/* Show the footer on hover or focus */
+footer:hover,
+footer:focus {
+  transform: translateY(0);
+}
+</style>
+   
+<style>
+   /* Style for on-screen navigation buttons */
+#on-screen-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    bottom: 20px;
+    background-color: lightgrey; /* Optional: Add a background color to the buttons */
+    z-index: 100; /* Ensure they are above other content */
+    width: 100%;
+    max-width:500px;
+    left: 470px;
+}
+    
+
+#prev-button,
+#next-button {
+    background-color: #C0350F; /* Vibrant orange */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#prev-button:hover,
+#next-button:hover {
+    background-color: black; /* Darker orange on hover */
+}
+
+/* Adjust button positioning for smaller screens */
+@media (max-width: 768px) {
+    #on-screen-buttons {
+        flex-direction: column;
+        align-items: center; /* Align buttons to the center on smaller screens */
+    }
+
+    #prev-button,
+    #next-button {
+        width: 100%; /* Make the buttons full width on smaller screens */
+        margin-top: 10px; /* Add some margin between the buttons on smaller screens */
+    }
+}
+
+
+</style>
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    
+    <div class="container">
+
+      <div id="about" class="container">
+        <h2>About Me</h2>
+        <p>Greetings, I'm Morgan White, bringing over 4 years of expertise in video editing and drone piloting to your creative projects. Based in Atlanta, GA, I'm dedicated to elevating every endeavor I'm part of. Whether it's crafting compelling narratives or capturing stunning aerial shots, I'm committed to realizing your vision. With proficiency in tools like Final Cut Pro, Adobe Premiere Pro, and DaVinci Resolve, I've shaped engaging content and even edited a music video that drew 300,000 views. As a skilled colorist, I've enhanced visuals and storytelling for 2 years. My role as a props master for the celebrated film "Fix" further highlights my valuable contribution. Let's collaborate to take your ideas to new heights!</p>
+      </div>
+      <div class="separation-border"></div>
+
+      <div id="portfolio" class="portfolio">
+        <div class="portfolio-item">
+          <h2>Portfolio</h2>
+            <!-- On-screen navigation buttons -->
+    <div id="on-screen-buttons">
+        <button id="prev-button">Previous</button>
+        <button id="next-button">Next</button>
+    </div>
+        </div>
+      </div>
+    </div>
+   
+    <div id="video-container">
+   
+      <!-- The iframe of the first YouTube video -->
+      <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/053aOByOBHI" frameborder="0" allowfullscreen></iframe>
+      <!-- The iframe of the second YouTube video -->
+      <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/3RGhzuvGrDU" frameborder="0" allowfullscreen></iframe>
+      <!-- The iframe of the third YouTube video -->
+      <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/nZrolduoIO0" frameborder="0" allowfullscreen></iframe>
+       <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/7Yjh0ZY6Ymk" frameborder="0" allowfullscreen></iframe>
+       <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/DNN9YV71LSI" frameborder="0" allowfullscreen></iframe>
+       <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/k1ywDlLjh_s" frameborder="0" allowfullscreen></iframe>
+       <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/oLDy5tjlPlI" frameborder="0" allowfullscreen></iframe>
+       
+    
+    </div>
+     
+    
+    <div class="separation-border2"></div>
+
+    <div id="contact" class="container">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:morganwhite2001@gmail.com">morganwhite2001@gmail.com</a><br>
+      Phone: 404-493-5011<br>
+     <a href="https://www.linkedin.com/in/morgan-white-26059a205/" target="_blank">My LinkedIn Profile</a>
+<footer>
+    &copy; 2023 Morgan White - Video Editor & Drone Pilot. All rights reserved.
+  </footer>
+      
+      </p>
+      <!-- Add more contact information if needed -->
+    </div>
+    
+     <!-- Other content and sections here -->
+
+    
+   
+   
+     <script>
+    const videoFrames = document.querySelectorAll(".youtube-video");
+    let currentIndex = 0;
+
+    function showVideo(index) {
+        videoFrames.forEach(videoFrame => {
+            videoFrame.style.display = "none";
+            videoFrame.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+        });
+        videoFrames[index].style.display = "block";
+    }
+
+    function navigateToPreviousVideo() {
+        currentIndex = (currentIndex - 1 + videoFrames.length) % videoFrames.length;
+        showVideo(currentIndex);
+    }
+
+    function navigateToNextVideo() {
+        currentIndex = (currentIndex + 1) % videoFrames.length;
+        showVideo(currentIndex);
+    }
+
+    // Add event listeners to on-screen navigation buttons
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+
+    prevButton.addEventListener("click", () => {
+        videoFrames[currentIndex].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        navigateToPreviousVideo();
+    });
+
+    nextButton.addEventListener("click", () => {
+        videoFrames[currentIndex].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        navigateToNextVideo();
+    });
+
+    // Add event listener to detect arrow key presses
+    window.addEventListener("keydown", event => {
+        if (event.key === "ArrowLeft") {
+            videoFrames[currentIndex].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            navigateToPreviousVideo();
+        } else if (event.key === "ArrowRight") {
+            videoFrames[currentIndex].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            navigateToNextVideo();
+        }
+    });
+
+    // Initially display the first video
+    showVideo(currentIndex);
+</script>
+
+  </body>
+
+</html>
